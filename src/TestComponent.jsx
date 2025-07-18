@@ -1,4 +1,7 @@
-import React from "react";
+import React from 'react';
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+await wait(2000); // 2초 딜레이
 
 function TestComponent() {
   return (

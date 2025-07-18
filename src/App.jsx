@@ -1,6 +1,7 @@
-import React from "react";
-import "./App.css";
-import TestComponent from "./TestComponent";
+import { lazy, Suspense } from 'react';
+import './App.css';
+
+const TestComponent = lazy(() => import('./TestComponent'));
 
 function App() {
   return (
@@ -9,7 +10,10 @@ function App() {
         lazy와 Suspense
         <br /> 사용해보기
       </h1>
-      <TestComponent />
+
+      <Suspense fallback={<div>로딩 중입니다...</div>}>
+        <TestComponent />
+      </Suspense>
     </div>
   );
 }
